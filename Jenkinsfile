@@ -1,12 +1,12 @@
 pipeline {
     agent any
     triggers {
-        pollSCM('H/5 * * * *')  // Corrigez ici l'espace supplémentaire
+        pollSCM('H/5 * * * *')  // Poll SCM toutes les 5 minutes
     }
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub')
-        IMAGE_NAME_SERVER = '[username]/mern-server'
-        IMAGE_NAME_CLIENT = '[username]/mern-client'
+        IMAGE_NAME_SERVER = 'username/mern-server'  // Remplacez 'username' par votre nom d'utilisateur Docker Hub
+        IMAGE_NAME_CLIENT = 'username/mern-client'  // Remplacez 'username' par votre nom d'utilisateur Docker Hub
     }
     stages {
         stage('Checkout') {
@@ -20,7 +20,7 @@ pipeline {
             steps {
                 dir('server') {
                     script {
-                        dockerImageServer = docker.build("${IMAGE_NAME_SERVER}")
+                        dockerImageServer = docker.build("${IMAGE_NAME_SERVER}:latest")  // Ajout du tag 'latest'
                     }
                 }
             }
@@ -29,7 +29,7 @@ pipeline {
             steps {
                 dir('client') {
                     script {
-                        dockerImageClient = docker.build("${IMAGE_NAME_CLIENT}")
+                        dockerImageClient = docker.build("${IMAGE_NAME_CLIENT}:latest")  // Ajout du tag 'latest'
                     }
                 }
             }
@@ -40,7 +40,7 @@ pipeline {
                     sh """
                     docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \\
                     aquasec/trivy:latest image --exit-code 0 --severity LOW,MEDIUM,HIGH,CRITICAL \\
-                    ${IMAGE_NAME_SERVER}
+                    ${IMAGE_NAME_SERVER}:latest  // Ajout du tag 'latest'
                     """
                 }
             }
@@ -51,7 +51,7 @@ pipeline {
                     sh """
                     docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \\
                     aquasec/trivy:latest image --exit-code 0 --severity LOW,MEDIUM,HIGH,CRITICAL \\
-                    ${IMAGE_NAME_CLIENT}
+                    ${IMAGE_NAME_CLIENT}:latest  // Ajout du tag 'latest'
                     """
                 }
             }
@@ -60,8 +60,8 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('', "${DOCKERHUB_CREDENTIALS}") {
-                        dockerImageServer.push()
-                        dockerImageClient.push()
+                        dockerImageServer.push()  // Pousse l'image vers Docker Hub
+                        dockerImageClient.push()  // Pousse l'image vers Docker Hub
                     }
                 }
             }
