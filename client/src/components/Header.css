@@ -1,0 +1,44 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color:#0056b3;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(162, 158, 158, 0.1); /* Added a subtle shadow */
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header button {
+    padding: 10px 20px;
+    border: 2px solid #ff0000;
+    border-radius: 5px;
+    background-color: #ff0000;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Added transition for smoother hover effect */
+}
+
+.header button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header button {
+        margin-top: 10px;
+    }
+}
+
