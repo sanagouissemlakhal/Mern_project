@@ -1,7 +1,7 @@
 pipeline {
     agent any
     triggers {
-        pollSCM('H /5 * * * *')
+        pollSCM('H/5 * * * *')  // Corrigez ici l'espace supplémentaire
     }
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub')
@@ -12,8 +12,8 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'git@github.com:sanagouissemlakhal/Mern_project.git',
-                    credentialsId: 'github_ssh'
+                    url: 'https://github.com/sanagouissemlakhal/Mern_project.git',
+                    credentialsId: 'Gitlab_ssh'
             }
         }
         stage('Build Server Image') {
