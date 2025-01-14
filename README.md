@@ -111,6 +111,8 @@ Il s'agit d'une application full-stack utilisant un client React et un serveur N
 
 
     *  pipeline
+  ![Capture d’écran 2025-01-14 222457](https://github.com/user-attachments/assets/c67aca07-80b9-4e45-ba62-e9a301026cd2)
+  
  
   ![cp3](https://github.com/user-attachments/assets/7e000e70-0686-4f8c-b5db-0c404769b6a7)
   
