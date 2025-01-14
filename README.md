@@ -121,7 +121,7 @@ Il s'agit d'une application full-stack utilisant un client React et un serveur N
     * Configurez Jenkins pour automatiser les étapes CI/CD 
 
     
-    ![cptr5](https://github.com/user-attachments/assets/08538c5e-9299-4aee-9750-8ae1fab80285)
+   ![cptr5](https://github.com/user-attachments/assets/08538c5e-9299-4aee-9750-8ae1fab80285)
 
 
     # Création Charts Helm
