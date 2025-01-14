@@ -100,8 +100,7 @@ Il s'agit d'une application full-stack utilisant un client React et un serveur N
 
 
 ---
-
-    # Screens 
+# Screens 
 
      *  Poussez les images Docker sur Docker Hub
      
