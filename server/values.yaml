@@ -1,0 +1,21 @@
+
+Fedi Hadj Sassi
+replicaCount: 3
+
+image:
+  repository: sanalakhal/mern-server
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 5000
+
+env:
+  - name: MONGO_URI
+    value: mongodb://mongodb:27017/Mern_project
+  - name: PORT
+    value: "5000"
+
+ingress:
+  enabled: false
