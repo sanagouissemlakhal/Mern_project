@@ -150,13 +150,14 @@ Il s'agit d'une application full-stack utilisant un client React et un serveur N
         ![cptr8](https://github.com/user-attachments/assets/ad86914b-902e-4c49-a635-07715ce922bc)
 
 
-        # docker file server 
+        * docker file server 
 
         ![cpt10](https://github.com/user-attachments/assets/760f7e4a-e8d5-4bd4-8ecd-64b686489488)
 
 
 
         #docker file client
+        
 
      ![cpt 20](https://github.com/user-attachments/assets/d3294cd9-d18d-45ba-ab50-8d4e678ed0ce)
 
@@ -165,7 +166,7 @@ Il s'agit d'une application full-stack utilisant un client React et un serveur N
 
         
         
-    ![cptr55](https://github.com/user-attachments/assets/1619beb8-d518-4a87-9e20-61108d567c8d)
+      ![cptr55](https://github.com/user-attachments/assets/1619beb8-d518-4a87-9e20-61108d567c8d)
 
 
 
