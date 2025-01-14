@@ -86,8 +86,7 @@ Il s'agit d'une application full-stack utilisant un client React et un serveur N
 
     4. Accédez au client à <http://localhost:3000/>
 
-
-     # Kubernetes Deployment
+# Kubernetes Deployment
 
         kubectl apply -f ./k8s/server-deployment.yaml
         kubectl apply -f ./k8s/client-deployment.yaml
